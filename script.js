@@ -54,17 +54,6 @@ function renderStars(nota) {
 }
 
 
-var stars = document.querySelectorAll('star-icon');
-document.addEventListener('click', function(e){
-    var classStar = e.target.classList;
-    if(!classStar.contains('ativo')){
-        stars.forEach(function(star){
-            star.classList('ativo');
-        });
-        classStar.add('ativo');
-    }
-
-});
 
 function editItem(index) {
     const item = livros[index];
@@ -77,11 +66,7 @@ function editItem(index) {
         livros[index].nota = newRating;
         renderTable();
     } else {
-        alert('Erro!');
-        const item = livros[index];
-        const newTitulo = prompt('Digite o novo titulo:', item.titulo);
-        const newAutor = prompt('Digite o novo autor:', item.autor);
-        const newNota = parseInt(prompt('Digite a nova nota:', item.nota));
+        alert('Erro! Tente Novamente!');
     }
 }
 
