@@ -60,10 +60,10 @@ function editItem(index) {
     const newTitulo = prompt('Digite o novo titulo:', item.titulo);
     const newAutor = prompt('Digite o novo autor:', item.autor);
     const newNota = parseInt(prompt('Digite a nova nota:', item.nota));
-    if (newTitle !== null && newAutor !== null && !isNaN(newNoata) && newNota >= 1 && newNoata <= 5) {
-        livros[index].titulo = newTitle;
-        livros[index].autor = newAuthor;
-        livros[index].nota = newRating;
+    if (newTitulo !== null || newAutor !== null || !isNaN(newNota) || newNota < 1 && newNoata > 5) {
+        livros[index].titulo = newTitulo;
+        livros[index].autor = newAutor;
+        livros[index].nota = newNota;
         renderTable();
     } else {
         alert('Erro! Tente Novamente!');
