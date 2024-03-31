@@ -77,7 +77,7 @@ function editItem(index) {
         livros[index].nota = newRating;
         renderTable();
     } else {
-        alert('Nota Invalida!');
+        alert('Erro!');
         const item = livros[index];
         const newTitulo = prompt('Digite o novo titulo:', item.titulo);
         const newAutor = prompt('Digite o novo autor:', item.autor);
