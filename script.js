@@ -3,8 +3,6 @@ const tableBody = document.querySelector('#tabela-livros tbody');
 
 let livros = [];
 
-
-//CREATE
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     const titulo = document.getElementById('titulo').value;
@@ -70,16 +68,20 @@ document.addEventListener('click', function(e){
 
 function editItem(index) {
     const item = livros[index];
-    const newTitle = prompt('Digite o novo titulo:', item.titulo);
-    const newAuthor = prompt('Digite o novo autor:', item.autor);
-    const newRating = parseInt(prompt('Digite a nova nota:', item.nota));
-    if (newTitle !== null && newAuthor !== null && !isNaN(newRating) && newRating >= 1 && newRating <= 5) {
+    const newTitulo = prompt('Digite o novo titulo:', item.titulo);
+    const newAutor = prompt('Digite o novo autor:', item.autor);
+    const newNota = parseInt(prompt('Digite a nova nota:', item.nota));
+    if (newTitle !== null && newAutor !== null && !isNaN(newNoata) && newNota >= 1 && newNoata <= 5) {
         livros[index].titulo = newTitle;
         livros[index].autor = newAuthor;
         livros[index].nota = newRating;
         renderTable();
     } else {
-        alert('Invalid input. Please try again.');
+        alert('Nota Invalida!');
+        const item = livros[index];
+        const newTitulo = prompt('Digite o novo titulo:', item.titulo);
+        const newAutor = prompt('Digite o novo autor:', item.autor);
+        const newNota = parseInt(prompt('Digite a nova nota:', item.nota));
     }
 }
 
