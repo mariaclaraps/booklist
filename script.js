@@ -47,8 +47,12 @@ function getCheckedStars() {
 
 function renderStars(nota) {
     let estrelas = '';
-    for (let i = 0; i < nota; i++) {
-        estrelas += '★';
+    for (let i = 1; i <= 5; i++) {
+        if (i <= nota) {
+            estrelas += '★';
+        } else {
+            estrelas += '☆';
+        }
     }
     return estrelas;
 }
