@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="estilo.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<title>BOOKSLIST</title>
+</head>
+<body>
+    <header>
+        <div class="cabecalho">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="imagens/logo.png" alt="logo">
+                </a>
+            </div>
+    </header>
+    <div class="adicionar-livro">
+        <h1>Adicione um novo livro lido</h1>
+        <form id="form-livro">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" placeholder="Digite o titulo do livro" required>
+            <label for="autor">Autor:</label>
+            <input type="text" id="autor" placeholder="Digite o nome do autor" required>
+            <label for="nota">Nota:</label>
+            <div class="nota-estrela" id="nota">
+                <input type="radio" name="nota" value="5" id="5"><label class="estrela" for="5"><i class="bi bi-star-fill"></i></label>
+                <input type="radio" name="nota" value="4" id="4"><label class="estrela" for="4"><i class="bi bi-star-fill"></i></label>
+                <input type="radio" name="nota" value="3" id="3"><label class="estrela" for="3"><i class="bi bi-star-fill"></i></label>
+                <input type="radio" name="nota" value="2" id="2"><label class="estrela" for="2"><i class="bi bi-star-fill"></i></label>
+                <input type="radio" name="nota" value="1" id="1"><label class="estrela" for="1"><i class="bi bi-star-fill"></i></label>
+            </div>
+            <button class="btn" type="submit">Adicionar</button>
+        </form>
+    </div>
+
+    <div class="tabela" id="tabela">
+        <table id="tabela-livros">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Nota</th>
+                    <th>Editar/Excluir</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
