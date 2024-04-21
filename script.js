@@ -57,8 +57,6 @@ function renderStars(nota) {
     return estrelas;
 }
 
-
-
 function editItem(index) {
     const item = livros[index];
     const newTitulo = prompt('Digite o novo titulo:', item.titulo);
@@ -73,14 +71,6 @@ function editItem(index) {
         alert('Erro! Tente Novamente!');
     }
 }
-
-document.querySelector('.listaDePosts').addEventListener('input', function (infosDoEvento) {
-    console.log('Houve uma digitação');
-    const elementoAtual = infosDoEvento.target;
-    const id = elementoAtual.parentNode.getAttribute('data-id');
-
-    miniRedeSocial.atualizaContentDoPost(id, elementoAtual.innerText)
-});
 
 function deleteItem(index) {
     const confirmation = confirm('Realmente deseja excluir este livro?');
