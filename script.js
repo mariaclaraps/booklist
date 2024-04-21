@@ -62,7 +62,7 @@ function editItem(index) {
     const newTitulo = prompt('Digite o novo titulo:', item.titulo);
     const newAutor = prompt('Digite o novo autor:', item.autor);
     const newNota = parseInt(prompt('Digite a nova nota:', item.nota));
-    if (newTitulo != null && newAutor != null && !isNaN(newNota) && newNota >= 1 && newNota <= 5) {
+    if (newTitulo !== null && newAutor !== null && !isNaN(newNota) && newNota >= 1 && newNota <= 5) {
         livros[index].titulo = newTitulo;
         livros[index].autor = newAutor;
         livros[index].nota = newNota;
