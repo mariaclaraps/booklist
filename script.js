@@ -24,14 +24,38 @@ function renderTable() {
                 <td>${item.autor}</td>
                 <td>${renderStars(item.nota)}</td>
                 <td>
-                    <button class="btn-js" onclick="editItem(${index})"><i class="bi bi-pencil-square"></i></button>
-                    <button class="btn-js" onclick="deleteItem(${index})"><i class="bi bi-trash"></i></button>
+                    <button class="btn-js" onclick="editLivro(${index})"><i class="bi bi-pencil-square"></i></button>
+                    <button class="btn-js" onclick="deleteLivro(${index})"><i class="bi bi-trash"></i></button>
                 </td>
             </tr>
         `;
         tableBody.insertAdjacentHTML('beforeend', row);
     });
 }
+
+function editLivro(index) {
+    const livro = livros[index];
+    const novoTitulo = prompt('Digite o novo titulo:', livro.titulo);
+    const novoAutor = prompt('Digite o novo autor:', livro.autor);
+    const novaNota = parseInt(prompt('Digite a nova nota:', livro.nota));
+   
+    if (novoTitulo !=='' && novoAutor !=='' && !isNaN(novaNota) && novaNota >= 1 && novaNota <= 5) {
+        livros[index].titulo = novoTitulo;
+        livros[index].autor = novoAutor;
+        livros[index].nota = novaNota;
+        renderTable();
+    } else {
+        alert('Erro! Tente Novamente!');
+    }
+}
+function deleteLivro(index) {
+    const confirmation = confirm('Realmente deseja excluir este livro?');
+    if (confirmation) {
+        livros.splice(index, 1);
+        renderTable();
+    }
+}
+
 
 function getCheckedStars() {
     const checkboxes = document.querySelectorAll('input[name="nota"]');
@@ -55,27 +79,4 @@ function renderStars(nota) {
         }
     }
     return estrelas;
-}
-
-function editItem(index) {
-    const item = livros[index];
-    const newTitulo = prompt('Digite o novo titulo:', item.titulo);
-    const newAutor = prompt('Digite o novo autor:', item.autor);
-    const newNota = parseInt(prompt('Digite a nova nota:', item.nota));
-    if (newTitulo !== null && newAutor !== null && !isNaN(newNota) && newNota >= 1 && newNota <= 5) {
-        livros[index].titulo = newTitulo;
-        livros[index].autor = newAutor;
-        livros[index].nota = newNota;
-        renderTable();
-    } else {
-        alert('Erro! Tente Novamente!');
-    }
-}
-
-function deleteItem(index) {
-    const confirmation = confirm('Realmente deseja excluir este livro?');
-    if (confirmation) {
-        livros.splice(index, 1);
-        renderTable();
-    }
 }
